@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:auth/home.dart';
-import 'package:auth/auth.dart';
+import 'auth/login.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({super.key});
@@ -22,7 +22,7 @@ class _WrapperState extends State<Wrapper> {
           } else if (snapshot.hasError) {
             return const Center(child: Text("Something went wrong"));
           } else {
-            return const Auth();
+            return const LoginPage();
           }
         },
       ),

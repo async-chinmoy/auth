@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Authentication',
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
+      debugShowCheckedModeBanner: false,
       home: const Wrapper(),
     );
   }

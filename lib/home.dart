@@ -13,16 +13,30 @@ class Home extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Home', style: TextStyle(color: Colors.black)),
+        backgroundColor: Colors.orange,
         actions: [
-          IconButton(icon: const Icon(Icons.logout), onPressed: _signOut),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            style: TextButton.styleFrom(foregroundColor: Colors.black),
+            onPressed: _signOut,
+          ),
         ],
       ),
       body: Container(
         child: Center(
-          child: Text(
-            'You are successfully logged in!',
-            style: TextStyle(fontSize: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Welcome , ${user?.email ?? 'User'}',
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
+                'You are successfully logged in!',
+                style: TextStyle(fontSize: 30),
+              ),
+            ],
           ),
         ),
       ),
